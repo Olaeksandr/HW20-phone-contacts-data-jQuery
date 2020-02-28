@@ -1,0 +1,23 @@
+table {
+    width: 100%; /* Ширина таблицы */
+    background: white; /* Цвет фона таблицы */
+    color: white; /* Цвет текста */
+    border-spacing: 1px; /* Расстояние между ячейками */
+    margin-top: 38px;
+    }
+    td, th {
+    background: rgb(21, 128, 0); /* Цвет фона ячеек */
+    padding: 5px; /* Поля вокруг текста */
+    }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #f1f1f1;
+    color: #080808;
+  }
+  
+  button, .button {
+    margin-bottom: 0rem;
+}

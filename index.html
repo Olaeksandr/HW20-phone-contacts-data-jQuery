@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Contacts jQuery</title>
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="./css/skeleton.css" />
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js" defer></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <button id="addContactBtn" type="submit" class="u-full-width button sticky">Add Contact</button>
+
+        <div id="dialog-form" title="New Contact">
+            <div data-contact-index="id">
+                <form>
+                    <fieldset>
+                      <label for="name">Name</label>
+                      <input type="text" name="name" id="addContactName" placeholder="Name" class="text ui-widget-content ui-corner-all form-input">
+                      <label for="name">Surname</label>
+                      <input type="text" name="surname" id="addContactSurname" placeholder="Surname" class="text ui-widget-content ui-corner-all form-input">
+                      <label for="email">Email</label>
+                      <input type="text" name="email" id="addContactEmail" placeholder="Example@gmail.com" class="text ui-widget-content ui-corner-all form-input">
+                      <label for="name">Phone</label>
+                      <input type="text" name="phone" id="addContactPhone" placeholder="Phone" class="text ui-widget-content ui-corner-all form-input">
+                      <label for="name">Date</label>
+                      <!-- <input type="date" name="date" id="addContactDate" value="Date" class="text ui-widget-content ui-corner-all"> -->
+                      <input type="text" class="datepicker">
+                      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                      <input type="submit" name="id" id="idInput" tabindex="-1" class="form-input" style="position:absolute; top:-1000px">
+                    </fieldset>
+                  </form>
+            </div>
+        </div>
+
+        <div id="edit-dialog-form" title="Update Contact">
+            <div data-id="id">
+                <form>
+                    <fieldset>
+                        
+                      <label for="name">Name</label>
+                      <input type="text" name="name" id="editContactName" placeholder="Name" class="text ui-widget-content ui-corner-all form-input">
+                      <label for="name">Surname</label>
+                      <input type="text" name="surname" id="editContactSurname" placeholder="Surname" class="text ui-widget-content ui-corner-all form-input">
+                      <label for="email">Email</label>
+                      <input type="text" name="email" id="editContactEmail" placeholder="Example@gmail.com" class="text ui-widget-content ui-corner-all form-input">
+                      <label for="name">Phone</label>
+                      <input type="text" name="phone" id="editContactPhone" placeholder="Phone" class="text ui-widget-content ui-corner-all form-input">
+                      <label for="name">Date</label>
+                      <input type="text" class="datepicker">
+                      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                      <input type="submit" name="id" id="idInput" tabindex="-1" class="form-input" style="position:absolute; top:-1000px">
+                    </fieldset>
+                  </form>
+            </div>
+        </div>
+
+
+        <table class="u-full-width">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="contactsList"></tbody>
+       </table>
+        <!-- <tfoot>
+        </tfoot>  -->
+
+        <template id="tdTemplate">
+            <tr class="contacts-item" data-id="{{id}}">
+             <td>{{name}}</td>
+             <td>{{surname}}</td>
+             <td>{{email}}</td>
+             <td>{{phone}}</td>
+             <td>{{date}}</td>
+
+             <td><button type="button" class="delete-btn">Delete</button>
+                <button type="button" class="edit-btn">Edit</button></td>
+            </tr>
+        </template>
+    </body>
+</html>
